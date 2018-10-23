@@ -440,8 +440,9 @@ if (argc >= 1) {
 
 }
 
-
-
+- (void)resizeViewports:(CDVInvokedUrlCommand *)command {
+    [self resizeViews];
+}
 
 
 - (void)requestAd:(CDVInvokedUrlCommand *)command {

@@ -40,7 +40,7 @@ admobExport.AD_SIZE = {
 
 admobExport.setOptions =
 	function(options, successCallback, failureCallback) {
-	  if(typeof options === 'object' 
+	  if(typeof options === 'object'
 		  && typeof options.publisherId === 'string'
 	      && options.publisherId.length > 0) {
 		  cordova.exec(
@@ -101,7 +101,7 @@ function(options, successCallback, failureCallback) {
  *          'publisherId': 'MY_PUBLISHER_ID'
  *        }
  *
- *        publisherId is the publisher ID from your AdMob site, which is required.  
+ *        publisherId is the publisher ID from your AdMob site, which is required.
  * @param {function()} successCallback The function to call if the interstitial was
  *         created successfully.
  * @param {function()} failureCallback The function to call if create interstitial
@@ -204,14 +204,14 @@ function(options, successCallback, failureCallback) {
 
 /*
  * Show or hide Ad.
- * 
- * @param {boolean} show true to show, false to hide.  
+ *
+ * @param {boolean} show true to show, false to hide.
  * @param {function()} successCallback The function to call if an ad was
  *        requested successfully.
  * @param {function()} failureCallback The function to call if an ad failed
  *        to be requested.
  */
-admobExport.showAd = 
+admobExport.showAd =
 function( show, successCallback, failureCallback) {
 	if (show === undefined) {
 		show = true;
@@ -219,14 +219,14 @@ function( show, successCallback, failureCallback) {
 
 	cordova.exec(
 		successCallback,
-		failureCallback, 
-		'AdMob', 
-		'showAd', 
+		failureCallback,
+		'AdMob',
+		'showAd',
 		[ show ]
 	);
 };
 
-admobExport.showInterstitialAd = 
+admobExport.showInterstitialAd =
 	function( show, successCallback, failureCallback) {
 		if (show === undefined) {
 			show = true;
@@ -234,12 +234,23 @@ admobExport.showInterstitialAd =
 
 		cordova.exec(
 			successCallback,
-			failureCallback, 
-			'AdMob', 
-			'showInterstitialAd', 
+			failureCallback,
+			'AdMob',
+			'showInterstitialAd',
 			[ show ]
 		);
 	};
+
+
+admobExport.resizeViewports = function(successCallback, failureCallback) {
+		cordova.exec(
+			successCallback,
+			failureCallback,
+			'AdMob',
+			'resizeViewports',
+			[]
+		);
+};
 
 module.exports = admobExport;
 

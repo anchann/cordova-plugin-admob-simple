@@ -103,6 +103,7 @@
 
 - (void)showInterstitialAd:(CDVInvokedUrlCommand *)command;
 
+- (void)resizeViewports:(CDVInvokedUrlCommand *)command;
 
 
 @end
